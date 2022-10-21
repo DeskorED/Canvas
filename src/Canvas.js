@@ -28,9 +28,9 @@ class Canvas {
         let deltaTime = curTime - prevTime;
         if (this.collapseArr) {
             for (let i = 0; i < this.collapseArr.length; i++) {
-                let middleX = Math.abs(this.collapseArr[i].x1 - this.collapseArr[i].x2)*1.5;
-                let middleY = Math.abs(this.collapseArr[i].y1 - this.collapseArr[i].y2)*1.5;
-                if (middleX <= 0) {
+                let middleX = Math.abs(this.collapseArr[i].x1 - this.collapseArr[i].x2) * 1.5;
+                let middleY = Math.abs(this.collapseArr[i].y1 - this.collapseArr[i].y2) * 1.5;
+                if (this.lineArr[i].collapseProgress <= 0) {
                     this.lineArr.remove(i);
                     this.collapseArr.remove(i)
                 } else {
@@ -53,7 +53,7 @@ class Canvas {
             }
         }
         this.reDraw();
-        window.requestAnimationFrame(()=>this.mainLoop(curTime));
+        window.requestAnimationFrame(() => this.mainLoop(curTime));
     }
 
     getMousePos(canvas, evt) {
@@ -125,7 +125,7 @@ class Canvas {
     }
 
     collapse() {
-            this.collapseArr = Array.from(new Set(this.lineArr));
+        this.collapseArr = Array.from(new Set(this.lineArr));
     }
 
 }
