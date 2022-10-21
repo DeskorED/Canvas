@@ -3,12 +3,14 @@
   "name": "canvas",
   "version": "1.0.0",
   "description": "",
+  "main": "main.js",
   "private": true,
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx webpack serve"
+    "start": "npx webpack serve",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
