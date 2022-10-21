@@ -28,8 +28,8 @@ class Canvas {
         let deltaTime = curTime - prevTime;
         if (this.collapseArr) {
             for (let i = 0; i < this.collapseArr.length; i++) {
-                let middleX = Math.abs(this.collapseArr[i].x1 - this.collapseArr[i].x2) * 1.5;
-                let middleY = Math.abs(this.collapseArr[i].y1 - this.collapseArr[i].y2) * 1.5;
+                let middleX = Math.abs(this.collapseArr[i].x1 - this.collapseArr[i].x2) * 2;
+                let middleY = Math.abs(this.collapseArr[i].y1 - this.collapseArr[i].y2) * 2;
                 if (this.lineArr[i].collapseProgress <= 0) {
                     this.lineArr.remove(i);
                     this.collapseArr.remove(i)
