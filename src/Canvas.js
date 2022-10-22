@@ -10,7 +10,7 @@ class Canvas {
         this.cnv = cnc;
         this.cnc = cnc.getContext('2d');
         this.start = false;
-        this.durraion = 2000;
+        this.durraion = 3000;
         this.lineArr = [];
         this.collapseArr = [];
         this.colisArr = [];
@@ -28,8 +28,8 @@ class Canvas {
         let deltaTime = curTime - prevTime;
         if (this.collapseArr) {
             for (let i = 0; i < this.collapseArr.length; i++) {
-                let middleX = Math.abs(this.collapseArr[i].x1 - this.collapseArr[i].x2) * 2;
-                let middleY = Math.abs(this.collapseArr[i].y1 - this.collapseArr[i].y2) * 2;
+                let middleX = Math.abs(this.collapseArr[i].x1 - this.collapseArr[i].x2) * this.durraion / 1000;
+                let middleY = Math.abs(this.collapseArr[i].y1 - this.collapseArr[i].y2) * this.durraion / 1000;
                 if (this.lineArr[i].collapseProgress <= 0) {
                     this.lineArr.remove(i);
                     this.collapseArr.remove(i)
